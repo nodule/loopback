@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "ns": "loopback",
+  "description": "Loopback App",
+  "phrases": {
+    "active": "Init Loopback App"
+  },
+  "ports": {
+    "input": {
+      "loopback": {
+        "title": "Loopback",
+        "type": "function"
+      }
+    },
+    "output": {
+      "app": {
+        "title": "App",
+        "type": "function"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "rest",
+  "ns": "loopback",
+  "description": "REST connector",
+  "phrases": {
+    "active": "Creating REST datasource"
+  },
+  "require": {
+    "loopback-connector-rest": "1.x.x"
+  },
+  "ports": {
+    "input": {
+      "loopback": {
+        "type": "function",
+        "title": "Loopback",
+        "readonly": "true"
+      }
+    },
+    "output": {
+     "db": {
+        "type": "object",
+        "title": "DB"
+     }
+    }
+  }
+}

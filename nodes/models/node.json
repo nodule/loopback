@@ -1,0 +1,25 @@
+{
+  "name": "models",
+  "ns": "loopback",
+  "description": "Get exposed models",
+  "phrases": {
+    "active": "Getting exposed Models"
+  },
+  "ports": {
+    "input": {
+      "loopback": {
+        "type": "function",
+        "title": "Loopback",
+        "readonly": true,
+        "required": true
+      }
+    },
+    "output": {
+      "models": {
+        "type": "array",
+        "title": "Models",
+        "description": "An array of models"
+      }
+    }
+  }
+}

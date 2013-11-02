@@ -1,0 +1,35 @@
+{
+  "name": "createUser",
+  "ns": "loopback",
+  "description": "Create a User",
+  "phrases": {
+    "active": "Creating User"
+  },
+  "ports": {
+    "input": {
+      "user": {
+        "type": "function",
+        "title": "User",
+        "readonly": "true"
+      },
+      "user_info": {
+        "type": "object",
+        "title": "User Info",
+        "description": "A user object",
+        "readonly": "true"
+      }
+    },
+    "output": {
+     "err": {
+        "type": "object",
+        "title": "Error",
+        "description": "Error"
+     },
+     "user": {
+        "type": "object",
+        "title": "User",
+        "description": "User"
+     }
+    }
+  }
+}

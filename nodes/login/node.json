@@ -1,0 +1,35 @@
+{
+  "name": "login",
+  "ns": "loopback",
+  "description": "User login",
+  "phrases": {
+    "active": "Logging in user {{input.username}}"
+  },
+  "ports": {
+    "input": {
+      "user": {
+        "type": "object",
+        "title": "User",
+        "description": "User object",
+        "readonly": "true"
+      },
+      "login": {
+        "type": "object",
+        "title": "Login info",
+        "description": "Requires { username: 'foo', password: 'bar' }"
+      }
+    },
+    "output": {
+     "err": {
+        "type": "object",
+        "title": "Error",
+        "description": "Error"
+     },
+     "session": {
+        "type": "object",
+        "title": "Session",
+        "description": "User Session"
+     }
+    }
+  }
+}

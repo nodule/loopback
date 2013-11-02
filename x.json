@@ -1,0 +1,731 @@
+{
+  "name": "loopback",
+  "description": "Loopback for Chiχ",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/loopback.git"
+  },
+  "dependencies": {
+    "loopback": "1.x.x",
+    "loopback-connector-mongodb": "1.x.x",
+    "loopback-connector-rest": "1.x.x"
+  },
+  "nodes": [
+    {
+      "ports": {
+        "input": {
+          "model": {
+            "type": "function",
+            "title": "Model",
+            "readonly": "true"
+          },
+          "type": {
+            "enum": [
+              "create"
+            ],
+            "title": "Type",
+            "description": "AfterRemote action type"
+          }
+        },
+        "output": {
+          "ctx": {
+            "type": "object",
+            "title": "ctx",
+            "description": "Ctx"
+          },
+          "user": {
+            "type": "object",
+            "title": "user"
+          },
+          "next": {
+            "type": "function",
+            "title": "next"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Defining afterRemote {{input.type}} Action"
+      },
+      "description": "After Remote Model Action",
+      "ns": "loopback",
+      "name": "afterRemote",
+      "fn": "output = [input.model, input.type]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "loopback": {
+            "title": "Loopback",
+            "type": "function"
+          }
+        },
+        "output": {
+          "app": {
+            "title": "App",
+            "type": "function"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Init Loopback App"
+      },
+      "description": "Loopback App",
+      "ns": "loopback",
+      "name": "app",
+      "fn": "output = { app: input.loopback() }\n"
+    },
+    {
+      "output": {
+        "err": {
+          "type": "object",
+          "title": "Error",
+          "description": "Error"
+        }
+      },
+      "ports": {
+        "input": {
+          "user": {
+            "type": "function",
+            "title": "User Model"
+          },
+          "token": {
+            "type": "string",
+            "title": "Token"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Confirming user email reset"
+      },
+      "description": "Confirm User Email Reset",
+      "ns": "loopback",
+      "name": "userEmailConfirmReset",
+      "fn": "output = [input.user, 'confirmReset', input.token]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "user": {
+            "type": "function",
+            "title": "User",
+            "readonly": "true"
+          },
+          "user_info": {
+            "type": "object",
+            "title": "User Info",
+            "description": "A user object",
+            "readonly": "true"
+          }
+        },
+        "output": {
+          "err": {
+            "type": "object",
+            "title": "Error",
+            "description": "Error"
+          },
+          "user": {
+            "type": "object",
+            "title": "User",
+            "description": "User"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating User"
+      },
+      "description": "Create a User",
+      "ns": "loopback",
+      "name": "createUser",
+      "fn": "output = [input.user, 'create', input.user_info]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "loopback": {
+            "type": "function",
+            "title": "Loopback",
+            "readonly": true,
+            "required": true
+          },
+          "name": {
+            "type": "string",
+            "title": "Model name",
+            "required": true
+          }
+        },
+        "output": {
+          "model": {
+            "type": "object",
+            "description": "Dynamic model instance"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating Dynamic Model {{input.name}}"
+      },
+      "description": "Dynamic Loopback Model",
+      "ns": "loopback",
+      "name": "dynamicModel",
+      "fn": "output = { model: input.loopback.Model.extend(input.name) }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "loopback": {
+            "type": "function",
+            "title": "Loopback",
+            "readonly": true,
+            "required": true
+          },
+          "model": {
+            "type": "function",
+            "title": "Model",
+            "required": true
+          }
+        },
+        "output": {}
+      },
+      "phrases": {
+        "active": "Exposing Model {{input.model.modelName}}"
+      },
+      "description": "Expose Loopback Model",
+      "ns": "loopback",
+      "name": "exposeModel",
+      "fn": "input.loopback.model(input.model)\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "model": {
+            "type": "object",
+            "title": "Model",
+            "description": "Model object",
+            "readonly": "true"
+          },
+          "criteria": {
+            "type": "object",
+            "title": "Criteria",
+            "description": "Search Criteria"
+          }
+        },
+        "output": {
+          "err": {
+            "type": "object",
+            "title": "Error",
+            "description": "Error"
+          },
+          "model": {
+            "type": "object",
+            "title": "Model",
+            "description": "The model"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Finding one {{input.model.name}}"
+      },
+      "description": "findOne",
+      "ns": "loopback",
+      "name": "findOne",
+      "fn": "output = [input.model, 'findOne', input.criteria]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function",
+            "title": "Express app",
+            "readonly": true,
+            "required": true
+          },
+          "port": {
+            "type": "string",
+            "title": "Port",
+            "description": "The port this express app should listen on",
+            "required": true
+          }
+        },
+        "output": {
+          "server": {
+            "type": "object"
+          }
+        }
+      },
+      "phrases": {
+        "active": "listening on port {{input.port}}, ?address?"
+      },
+      "description": "express listen",
+      "ns": "express",
+      "name": "listen",
+      "fn": "output = { server: input.app.listen(input.port) }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "user": {
+            "type": "object",
+            "title": "User",
+            "description": "User object",
+            "readonly": "true"
+          },
+          "login": {
+            "type": "object",
+            "title": "Login info",
+            "description": "Requires { username: 'foo', password: 'bar' }"
+          }
+        },
+        "output": {
+          "err": {
+            "type": "object",
+            "title": "Error",
+            "description": "Error"
+          },
+          "session": {
+            "type": "object",
+            "title": "Session",
+            "description": "User Session"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Logging in user {{input.username}}"
+      },
+      "description": "User login",
+      "ns": "loopback",
+      "name": "login",
+      "fn": "output = [input.user, 'login', input.login]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "user": {
+            "type": "object",
+            "title": "User",
+            "description": "User object",
+            "readonly": "true"
+          },
+          "session_id": {
+            "type": "string",
+            "title": "Session ID",
+            "description": "User Session ID"
+          }
+        },
+        "output": {
+          "err": {
+            "type": "object",
+            "title": "Error",
+            "description": "Error"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Logging out user"
+      },
+      "description": "User logout",
+      "ns": "loopback",
+      "name": "logout",
+      "fn": "output = [input.user, 'logout', input.session_id]\n"
+    },
+    {
+      "ports": {
+        "input": {},
+        "output": {
+          "loopback": {
+            "title": "Loopback",
+            "type": "function"
+          }
+        }
+      },
+      "require": {
+        "loopback": "1.x.x"
+      },
+      "phrases": {
+        "active": "Creating Loopback"
+      },
+      "description": "Loopback",
+      "ns": "loopback",
+      "name": "loopback",
+      "fn": "output = { loopback: loopback }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "loopback": {
+            "type": "function",
+            "title": "Loopback",
+            "readonly": "true"
+          },
+          "transports": {
+            "title": "Transports",
+            "type": "Array",
+            "items": {
+              "type": {
+                "enum": [
+                  "smtp"
+                ],
+                "title": "Type",
+                "default": "smtp"
+              },
+              "host": {
+                "type": "string",
+                "title": "Host"
+              },
+              "port": {
+                "type": "string",
+                "title": "Port"
+              },
+              "secureConnection": {
+                "type": "boolean",
+                "title": "Boolean",
+                "default": true
+              },
+              "auth": {
+                "type": "object",
+                "title": "Auth",
+                "properties": {
+                  "user": {
+                    "type": "string",
+                    "title": "User"
+                  },
+                  "password": {
+                    "type": "password",
+                    "title": "Password"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "output": {
+          "mail": {
+            "type": "object",
+            "title": "Mail"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating Mail datasource"
+      },
+      "description": "Mail connector",
+      "ns": "loopback",
+      "name": "mail",
+      "fn": "output = { mail: input.loopback.createDataSource({\n  connector: input.loopback.Mail,\n  transports: input.transports\n}) }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "loopback": {
+            "type": "function",
+            "title": "Loopback",
+            "readonly": "true"
+          }
+        },
+        "output": {
+          "memory": {
+            "type": "object",
+            "title": "Memory",
+            "description": "Memory Connector"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating Memory datasource"
+      },
+      "description": "Memory connector",
+      "ns": "loopback",
+      "name": "memory",
+      "fn": "output = { memory: input.loopback.memory() }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "loopback": {
+            "type": "function",
+            "title": "Loopback",
+            "readonly": true,
+            "required": true
+          }
+        },
+        "output": {
+          "models": {
+            "type": "array",
+            "title": "Models",
+            "description": "An array of models"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Getting exposed Models"
+      },
+      "description": "Get exposed models",
+      "ns": "loopback",
+      "name": "models",
+      "fn": "input.loopback.models()\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "loopback": {
+            "type": "function",
+            "title": "Loopback",
+            "readonly": "true"
+          },
+          "settings": {
+            "title": "Settings",
+            "properties": {
+              "host": {
+                "type": "string",
+                "title": "Host",
+                "default": "localhost"
+              },
+              "port": {
+                "type": "string",
+                "title": "Port",
+                "default": "27017"
+              },
+              "database": {
+                "type": "string",
+                "title": "Database",
+                "default": "test"
+              }
+            }
+          },
+          "login": {
+            "title": "Login Information",
+            "properties": {
+              "username": {
+                "type": "string",
+                "title": "Username"
+              },
+              "password": {
+                "type": "password",
+                "title": "Password"
+              }
+            }
+          },
+          "debug": {
+            "type": "boolean",
+            "title": "Debug"
+          }
+        },
+        "output": {
+          "db": {
+            "type": "object",
+            "title": "DB"
+          }
+        }
+      },
+      "require": {
+        "loopback-datasource-juggler": "1.x.x",
+        "loopback-connector-mongodb": "1.x.x"
+      },
+      "phrases": {
+        "active": "Creating MongoDB datasource"
+      },
+      "description": "MongoDB connector",
+      "ns": "loopback",
+      "name": "mongodb",
+      "fn": "var DataSource = loopback_datasource_juggler.DataSource;\noutput = { db: input.loopback.createDataSource({ connector: loopback_connector_mongodb }) }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "loopback": {
+            "type": "function",
+            "title": "Loopback",
+            "readonly": "true"
+          }
+        },
+        "output": {
+          "db": {
+            "type": "object",
+            "title": "DB"
+          }
+        }
+      },
+      "require": {
+        "loopback-connector-rest": "1.x.x"
+      },
+      "phrases": {
+        "active": "Creating REST datasource"
+      },
+      "description": "REST connector",
+      "ns": "loopback",
+      "name": "rest",
+      "fn": "output = { db: input.loopback.createDataSource({ connector: loopback_connector_rest }) }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "app": {
+            "type": "function",
+            "title": "App",
+            "readonly": true,
+            "required": true
+          },
+          "loopback": {
+            "type": "function",
+            "title": "Loopback",
+            "readonly": true,
+            "required": true
+          }
+        },
+        "output": {}
+      },
+      "phrases": {
+        "active": "Using REST Router"
+      },
+      "description": "Rest Router",
+      "ns": "loopback",
+      "name": "restRouter",
+      "fn": "input.app.use(input.loopback.rest())\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "loopback": {
+            "type": "function",
+            "title": "Loopback",
+            "readonly": "true"
+          },
+          "user_connector": {
+            "type": "function",
+            "title": "User Connector",
+            "readonly": "true"
+          },
+          "session_connector": {
+            "type": "function",
+            "title": "Session Connector",
+            "readonly": "true"
+          }
+        },
+        "output": {
+          "user": {
+            "type": "object",
+            "title": "User",
+            "description": "User"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating User Model"
+      },
+      "description": "User Model",
+      "ns": "loopback",
+      "name": "user",
+      "fn": "var User = input.loopback.User.extend('user');\nUser.attachTo(input.user_connector);\nUser.session.attachTo(input.session_connector);\noutput = { user: User }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "user": {
+            "type": "function",
+            "title": "User",
+            "readonly": "true"
+          },
+          "mail": {
+            "type": "object",
+            "title": "Email Datasource",
+            "description": "Email Datasource",
+            "readonly": "true"
+          }
+        },
+        "output": {}
+      },
+      "phrases": {
+        "active": "Attaching User Email Datasource"
+      },
+      "description": "User Email",
+      "ns": "loopback",
+      "name": "userEmail",
+      "fn": "input.user.email.attachTo(input.mail)\ninput.user.requireEmailVerification = true;\n"
+    },
+    {
+      "output": {
+        "err": {
+          "type": "object",
+          "title": "Error",
+          "description": "Error"
+        }
+      },
+      "ports": {
+        "input": {
+          "user": {
+            "type": "function",
+            "title": "User Model"
+          },
+          "user_info": {
+            "type": "object",
+            "title": "User"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Resetting user email for {{input.user.email}}"
+      },
+      "description": "Reset User Email",
+      "ns": "loopback",
+      "name": "userEmailReset",
+      "fn": "output = [input.user, 'reset', input.user_info.email]\n"
+    },
+    {
+      "output": {
+        "err": {
+          "type": "object",
+          "title": "Error",
+          "description": "Error"
+        },
+        "user": {
+          "type": "object",
+          "title": "User",
+          "description": "User"
+        }
+      },
+      "ports": {
+        "input": {
+          "user": {
+            "type": "object",
+            "title": "User"
+          },
+          "options": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "email",
+                "title": "Email"
+              },
+              "subject": {
+                "type": "string",
+                "title": "Subject",
+                "default": "Thanks for Registering at FooBar"
+              },
+              "text": {
+                "type": "string",
+                "title": "Text",
+                "default": "Please verify your email address!"
+              },
+              "template": {
+                "type": "string",
+                "title": "Template: [Problem needs a file]"
+              },
+              "redirect": {
+                "type": "string",
+                "title": "Redirect",
+                "default": "/"
+              }
+            }
+          }
+        }
+      },
+      "phrases": {
+        "active": "Verifying user email for {{input.options.email}}"
+      },
+      "description": "Verfify User",
+      "ns": "loopback",
+      "name": "userVerify",
+      "fn": "input.options.type = 'email'\ninput.options.to   = input.user.email\ninput.user.verify(input.options, input.next)\n"
+    }
+  ],
+  "twigs": []
+}

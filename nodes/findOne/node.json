@@ -1,0 +1,35 @@
+{
+  "name": "findOne",
+  "ns": "loopback",
+  "description": "findOne",
+  "phrases": {
+    "active": "Finding one {{input.model.name}}"
+  },
+  "ports": {
+    "input": {
+      "model": {
+        "type": "object",
+        "title": "Model",
+        "description": "Model object",
+        "readonly": "true"
+      },
+      "criteria": {
+        "type": "object",
+        "title": "Criteria",
+        "description": "Search Criteria"
+      }
+    },
+    "output": {
+     "err": {
+        "type": "object",
+        "title": "Error",
+        "description": "Error"
+     },
+     "model": {
+        "type": "object",
+        "title": "Model",
+        "description": "The model"
+     }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "restRouter",
+  "ns": "loopback",
+  "description": "Rest Router",
+  "phrases": {
+    "active": "Using REST Router"
+  },
+  "ports": {
+    "input": {
+      "app": {
+        "type": "function",
+        "title": "App",
+        "readonly": true,
+        "required": true
+      },
+      "loopback": {
+        "type": "function",
+        "title": "Loopback",
+        "readonly": true,
+        "required": true
+      }
+    },
+    "output": {
+    }
+  }
+}

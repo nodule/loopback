@@ -1,0 +1,25 @@
+{
+  "name": "exposeModel",
+  "ns": "loopback",
+  "description": "Expose Loopback Model",
+  "phrases": {
+    "active": "Exposing Model {{input.model.modelName}}"
+  },
+  "ports": {
+    "input": {
+      "loopback": {
+        "type": "function",
+        "title": "Loopback",
+        "readonly": true,
+        "required": true
+      },
+      "model": {
+        "type": "function",
+        "title": "Model",
+        "required": true
+      }
+    },
+    "output": {
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "afterRemote",
+  "ns": "loopback",
+  "description": "After Remote Model Action",
+  "phrases": {
+    "active": "Defining afterRemote {{input.type}} Action"
+  },
+  "ports": {
+    "input": {
+      "model": {
+        "type": "function",
+        "title": "Model",
+        "readonly": "true"
+      },
+      "type": {
+        "enum": ["create"],
+        "title": "Type",
+        "description": "AfterRemote action type"
+      }
+    },
+    "output": {
+      "ctx": {
+        "type": "object",
+        "title": "ctx",
+        "description": "Ctx"
+      },
+      "user": {
+        "type": "object",
+        "title": "user"
+      },
+      "next": {
+        "type": "function",
+        "title": "next"
+      }
+    }
+  }
+}

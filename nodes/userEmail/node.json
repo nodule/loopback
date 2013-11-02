@@ -1,0 +1,25 @@
+{
+  "name": "userEmail",
+  "ns": "loopback",
+  "description": "User Email",
+  "phrases": {
+    "active": "Attaching User Email Datasource"
+  },
+  "ports": {
+    "input": {
+      "user": {
+        "type": "function",
+        "title": "User",
+        "readonly": "true"
+      },
+      "mail": {
+        "type": "object",
+        "title": "Email Datasource",
+        "description": "Email Datasource",
+        "readonly": "true"
+      }
+    },
+    "output": {
+    }
+  }
+}

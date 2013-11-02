@@ -1,0 +1,64 @@
+{
+  "name": "mongodb",
+  "ns": "loopback",
+  "description": "MongoDB connector",
+  "phrases": {
+    "active": "Creating MongoDB datasource"
+  },
+  "require": {
+    "loopback-datasource-juggler": "1.x.x",
+    "loopback-connector-mongodb": "1.x.x"
+  },
+  "ports": {
+    "input": {
+      "loopback": {
+        "type": "function",
+        "title": "Loopback",
+        "readonly": "true"
+      },
+      "settings": {
+        "title": "Settings",
+        "properties": {
+          "host": {
+            "type": "string",
+            "title": "Host",
+            "default": "localhost"
+          },
+          "port": {
+            "type": "string",
+            "title": "Port",
+            "default": "27017"
+          },
+          "database": {
+            "type": "string",
+            "title": "Database",
+            "default": "test"
+          }
+        }
+      },
+      "login": {
+        "title": "Login Information",
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "Username"
+          },
+          "password": {
+            "type": "password",
+            "title": "Password"
+          }
+        }
+      },
+      "debug": {
+        "type": "boolean",
+        "title": "Debug"
+      }
+    },
+    "output": {
+     "db": {
+        "type": "object",
+        "title": "DB"
+     }
+    }
+  }
+}

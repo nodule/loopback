@@ -1,0 +1,27 @@
+{
+  "name": "userEmailReset",
+    "ns": "loopback",
+    "description": "Reset User Email",
+    "phrases": {
+      "active": "Resetting user email for {{input.user.email}}"
+    },
+    "ports": {
+      "input": {
+        "user": {
+          "type": "function",
+          "title": "User Model"
+        },
+        "user_info": {
+          "type": "object",
+          "title": "User"
+        }
+      }
+    },
+    "output": {
+      "err": {
+        "type": "object",
+        "title": "Error",
+        "description": "Error"
+      }
+    }
+}

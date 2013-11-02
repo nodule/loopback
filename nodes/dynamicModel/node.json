@@ -1,0 +1,29 @@
+{
+  "name": "dynamicModel",
+  "ns": "loopback",
+  "description": "Dynamic Loopback Model",
+  "phrases": {
+    "active": "Creating Dynamic Model {{input.name}}"
+  },
+  "ports": {
+    "input": {
+      "loopback": {
+        "type": "function",
+        "title": "Loopback",
+        "readonly": true,
+        "required": true
+      },
+      "name": {
+        "type": "string",
+        "title": "Model name",
+        "required": true
+      }
+    },
+    "output": {
+      "model": {
+        "type": "object",
+        "description": "Dynamic model instance"
+      }
+    }
+  }
+}

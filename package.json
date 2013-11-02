@@ -1,0 +1,30 @@
+{
+  "name": "nodule-loopback",
+  "description": "Loopback for Chiχ",
+  "author": "Rob Halff <rob.halff@gmail.com>",
+  "version": "0.0.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/loopback.git"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "dependencies": {
+    "loopback": "1.x.x",
+    "loopback-connector-mongodb": "1.x.x",
+    "loopback-connector-rest": "1.x.x"
+  },
+  "devDependencies": {
+    "chit": "0.x.x"
+  },
+  "main": "x",
+  "scripts": {
+    "test": "chit"
+  },
+  "chix": {
+    "name": "loopback",
+    "color": "rgb(35,136,35)"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "mail",
+  "ns": "loopback",
+  "description": "Mail connector",
+  "phrases": {
+    "active": "Creating Mail datasource"
+  },
+  "ports": {
+    "input": {
+      "loopback": {
+        "type": "function",
+        "title": "Loopback",
+        "readonly": "true"
+      },
+      "transports": {
+        "title": "Transports",
+        "type": "Array",
+        "items": {
+          "type": {
+            "enum": ["smtp"],
+            "title": "Type",
+            "default": "smtp"
+          },
+          "host": {
+            "type": "string",
+            "title": "Host"
+          },
+          "port": {
+            "type": "string",
+            "title": "Port"
+          },
+          "secureConnection": {
+            "type": "boolean",
+            "title": "Boolean",
+            "default": true
+          },
+          "auth": {
+            "type": "object",
+            "title": "Auth",
+            "properties": {
+
+              "user": {
+                "type": "string",
+                "title": "User"
+              },
+
+              "password": {
+                "type": "password",
+                "title": "Password"
+              }
+
+            }
+          }
+        }
+      }
+    },
+    "output": {
+     "mail": {
+        "type": "object",
+        "title": "Mail"
+     }
+    }
+  }
+}

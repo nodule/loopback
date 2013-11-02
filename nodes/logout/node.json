@@ -1,0 +1,30 @@
+{
+  "name": "logout",
+  "ns": "loopback",
+  "description": "User logout",
+  "phrases": {
+    "active": "Logging out user"
+  },
+  "ports": {
+    "input": {
+      "user": {
+        "type": "object",
+        "title": "User",
+        "description": "User object",
+        "readonly": "true"
+      },
+      "session_id": {
+        "type": "string",
+        "title": "Session ID",
+        "description": "User Session ID"
+      }
+    },
+    "output": {
+     "err": {
+        "type": "object",
+        "title": "Error",
+        "description": "Error"
+     }
+    }
+  }
+}
