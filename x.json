@@ -50,6 +50,7 @@
       "description": "After Remote Model Action",
       "ns": "loopback",
       "name": "afterRemote",
+      "env": "server",
       "fn": "output = [input.model, input.type]\n"
     },
     {
@@ -73,6 +74,7 @@
       "description": "Loopback App",
       "ns": "loopback",
       "name": "app",
+      "env": "server",
       "fn": "output = { app: input.loopback() }\n"
     },
     {
@@ -101,6 +103,7 @@
       "description": "Confirm User Email Reset",
       "ns": "loopback",
       "name": "userEmailConfirmReset",
+      "env": "server",
       "fn": "output = [input.user, 'confirmReset', input.token]\n"
     },
     {
@@ -137,6 +140,7 @@
       "description": "Create a User",
       "ns": "loopback",
       "name": "createUser",
+      "env": "server",
       "fn": "output = [input.user, 'create', input.user_info]\n"
     },
     {
@@ -167,6 +171,7 @@
       "description": "Dynamic Loopback Model",
       "ns": "loopback",
       "name": "dynamicModel",
+      "env": "server",
       "fn": "output = { model: input.loopback.Model.extend(input.name) }\n"
     },
     {
@@ -192,6 +197,7 @@
       "description": "Expose Loopback Model",
       "ns": "loopback",
       "name": "exposeModel",
+      "env": "server",
       "fn": "input.loopback.model(input.model)\n"
     },
     {
@@ -228,6 +234,7 @@
       "description": "findOne",
       "ns": "loopback",
       "name": "findOne",
+      "env": "server",
       "fn": "output = [input.model, 'findOne', input.criteria]\n"
     },
     {
@@ -258,6 +265,7 @@
       "description": "express listen",
       "ns": "express",
       "name": "listen",
+      "env": "server",
       "fn": "output = { server: input.app.listen(input.port) }\n"
     },
     {
@@ -294,6 +302,7 @@
       "description": "User login",
       "ns": "loopback",
       "name": "login",
+      "env": "server",
       "fn": "output = [input.user, 'login', input.login]\n"
     },
     {
@@ -325,6 +334,7 @@
       "description": "User logout",
       "ns": "loopback",
       "name": "logout",
+      "env": "server",
       "fn": "output = [input.user, 'logout', input.session_id]\n"
     },
     {
@@ -345,7 +355,9 @@
       },
       "description": "Loopback",
       "ns": "loopback",
+      "title": "Loopback",
       "name": "loopback",
+      "env": "server",
       "fn": "output = { loopback: loopback }\n"
     },
     {
@@ -410,6 +422,7 @@
       "description": "Mail connector",
       "ns": "loopback",
       "name": "mail",
+      "env": "server",
       "fn": "output = { mail: input.loopback.createDataSource({\n  connector: input.loopback.Mail,\n  transports: input.transports\n}) }\n"
     },
     {
@@ -435,6 +448,7 @@
       "description": "Memory connector",
       "ns": "loopback",
       "name": "memory",
+      "env": "server",
       "fn": "output = { memory: input.loopback.memory() }\n"
     },
     {
@@ -461,6 +475,7 @@
       "description": "Get exposed models",
       "ns": "loopback",
       "name": "models",
+      "env": "server",
       "fn": "input.loopback.models()\n"
     },
     {
@@ -526,6 +541,7 @@
       "description": "MongoDB connector",
       "ns": "loopback",
       "name": "mongodb",
+      "env": "server",
       "fn": "var DataSource = loopback_datasource_juggler.DataSource;\noutput = { db: input.loopback.createDataSource({ connector: loopback_connector_mongodb }) }\n"
     },
     {
@@ -553,6 +569,7 @@
       "description": "REST connector",
       "ns": "loopback",
       "name": "rest",
+      "env": "server",
       "fn": "output = { db: input.loopback.createDataSource({ connector: loopback_connector_rest }) }\n"
     },
     {
@@ -579,6 +596,7 @@
       "description": "Rest Router",
       "ns": "loopback",
       "name": "restRouter",
+      "env": "server",
       "fn": "input.app.use(input.loopback.rest())\n"
     },
     {
@@ -614,6 +632,7 @@
       "description": "User Model",
       "ns": "loopback",
       "name": "user",
+      "env": "server",
       "fn": "var User = input.loopback.User.extend('user');\nUser.attachTo(input.user_connector);\nUser.session.attachTo(input.session_connector);\noutput = { user: User }\n"
     },
     {
@@ -639,6 +658,7 @@
       "description": "User Email",
       "ns": "loopback",
       "name": "userEmail",
+      "env": "server",
       "fn": "input.user.email.attachTo(input.mail)\ninput.user.requireEmailVerification = true;\n"
     },
     {
@@ -667,6 +687,7 @@
       "description": "Reset User Email",
       "ns": "loopback",
       "name": "userEmailReset",
+      "env": "server",
       "fn": "output = [input.user, 'reset', input.user_info.email]\n"
     },
     {
@@ -724,8 +745,10 @@
       "description": "Verfify User",
       "ns": "loopback",
       "name": "userVerify",
+      "env": "server",
       "fn": "input.options.type = 'email'\ninput.options.to   = input.user.email\ninput.user.verify(input.options, input.next)\n"
     }
   ],
-  "twigs": []
+  "twigs": [],
+  "env": "server"
 }
