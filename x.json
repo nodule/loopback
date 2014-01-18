@@ -98,7 +98,7 @@
         }
       },
       "output": {
-        "err": {
+        "error": {
           "type": "object",
           "title": "Error",
           "description": "Error"
@@ -129,7 +129,7 @@
           }
         },
         "output": {
-          "err": {
+          "error": {
             "type": "object",
             "title": "Error",
             "description": "Error"
@@ -223,7 +223,7 @@
           }
         },
         "output": {
-          "err": {
+          "error": {
             "type": "object",
             "title": "Error",
             "description": "Error"
@@ -291,7 +291,7 @@
           }
         },
         "output": {
-          "err": {
+          "error": {
             "type": "object",
             "title": "Error",
             "description": "Error"
@@ -328,7 +328,7 @@
           }
         },
         "output": {
-          "err": {
+          "error": {
             "type": "object",
             "title": "Error",
             "description": "Error"
@@ -682,7 +682,7 @@
         }
       },
       "output": {
-        "err": {
+        "error": {
           "type": "object",
           "title": "Error",
           "description": "Error"
@@ -735,7 +735,7 @@
         }
       },
       "output": {
-        "err": {
+        "error": {
           "type": "object",
           "title": "Error",
           "description": "Error"
