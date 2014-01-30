@@ -1,1 +1,3 @@
-output = { memory: input.loopback.memory() }
+output = {
+  memory: input.loopback.memory()
+}
