@@ -14,12 +14,6 @@
   },
   "nodes": [
     {
-      "name": "afterRemote",
-      "ns": "loopback",
-      "description": "After Remote Model Action",
-      "phrases": {
-        "active": "Defining afterRemote {{input.type}} Action"
-      },
       "ports": {
         "input": {
           "model": {
@@ -51,16 +45,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Defining afterRemote {{input.type}} Action"
+      },
+      "description": "After Remote Model Action",
+      "ns": "loopback",
+      "name": "afterRemote",
       "env": "server",
       "fn": "output = [input.model, input.type]\n"
     },
     {
-      "name": "app",
-      "ns": "loopback",
-      "description": "Loopback App",
-      "phrases": {
-        "active": "Init Loopback App"
-      },
       "ports": {
         "input": {
           "loopback": {
@@ -75,15 +69,22 @@
           }
         }
       },
+      "phrases": {
+        "active": "Init Loopback App"
+      },
+      "description": "Loopback App",
+      "ns": "loopback",
+      "name": "app",
       "env": "server",
-      "fn": "output = { app: input.loopback() }\n"
+      "fn": "output = {\n  app: input.loopback()\n}\n"
     },
     {
-      "name": "userEmailConfirmReset",
-      "ns": "loopback",
-      "description": "Confirm User Email Reset",
-      "phrases": {
-        "active": "Confirming user email reset"
+      "output": {
+        "error": {
+          "type": "object",
+          "title": "Error",
+          "description": "Error"
+        }
       },
       "ports": {
         "input": {
@@ -97,23 +98,16 @@
           }
         }
       },
-      "output": {
-        "error": {
-          "type": "object",
-          "title": "Error",
-          "description": "Error"
-        }
+      "phrases": {
+        "active": "Confirming user email reset"
       },
+      "description": "Confirm User Email Reset",
+      "ns": "loopback",
+      "name": "userEmailConfirmReset",
       "env": "server",
       "fn": "output = [input.user, 'confirmReset', input.token]\n"
     },
     {
-      "name": "createUser",
-      "ns": "loopback",
-      "description": "Create a User",
-      "phrases": {
-        "active": "Creating User"
-      },
       "ports": {
         "input": {
           "user": {
@@ -141,16 +135,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Creating User"
+      },
+      "description": "Create a User",
+      "ns": "loopback",
+      "name": "createUser",
       "env": "server",
       "fn": "output = [input.user, 'create', input.user_info]\n"
     },
     {
-      "name": "dynamicModel",
-      "ns": "loopback",
-      "description": "Dynamic Loopback Model",
-      "phrases": {
-        "active": "Creating Dynamic Model {{input.name}}"
-      },
       "ports": {
         "input": {
           "loopback": {
@@ -172,16 +166,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Creating Dynamic Model {{input.name}}"
+      },
+      "description": "Dynamic Loopback Model",
+      "ns": "loopback",
+      "name": "dynamicModel",
       "env": "server",
-      "fn": "output = { model: input.loopback.Model.extend(input.name) }\n"
+      "fn": "output = {\n  model: input.loopback.Model.extend(input.name)\n}\n"
     },
     {
-      "name": "exposeModel",
-      "ns": "loopback",
-      "description": "Expose Loopback Model",
-      "phrases": {
-        "active": "Exposing Model {{input.model.modelName}}"
-      },
       "ports": {
         "input": {
           "loopback": {
@@ -198,16 +192,16 @@
         },
         "output": {}
       },
+      "phrases": {
+        "active": "Exposing Model {{input.model.modelName}}"
+      },
+      "description": "Expose Loopback Model",
+      "ns": "loopback",
+      "name": "exposeModel",
       "env": "server",
       "fn": "input.loopback.model(input.model)\n"
     },
     {
-      "name": "findOne",
-      "ns": "loopback",
-      "description": "findOne",
-      "phrases": {
-        "active": "Finding one {{input.model.name}}"
-      },
       "ports": {
         "input": {
           "model": {
@@ -235,16 +229,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Finding one {{input.model.name}}"
+      },
+      "description": "findOne",
+      "ns": "loopback",
+      "name": "findOne",
       "env": "server",
       "fn": "output = [input.model, 'findOne', input.criteria]\n"
     },
     {
-      "name": "listen",
-      "ns": "express",
-      "description": "express listen",
-      "phrases": {
-        "active": "listening on port {{input.port}}, ?address?"
-      },
       "ports": {
         "input": {
           "app": {
@@ -266,16 +260,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "listening on port {{input.port}}, ?address?"
+      },
+      "description": "express listen",
+      "ns": "express",
+      "name": "listen",
       "env": "server",
-      "fn": "output = { server: input.app.listen(input.port) }\n"
+      "fn": "output = {\n  server: input.app.listen(input.port)\n}\n"
     },
     {
-      "name": "login",
-      "ns": "loopback",
-      "description": "User login",
-      "phrases": {
-        "active": "Logging in user {{input.username}}"
-      },
       "ports": {
         "input": {
           "user": {
@@ -303,16 +297,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Logging in user {{input.username}}"
+      },
+      "description": "User login",
+      "ns": "loopback",
+      "name": "login",
       "env": "server",
       "fn": "output = [input.user, 'login', input.login]\n"
     },
     {
-      "name": "logout",
-      "ns": "loopback",
-      "description": "User logout",
-      "phrases": {
-        "active": "Logging out user"
-      },
       "ports": {
         "input": {
           "user": {
@@ -335,20 +329,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Logging out user"
+      },
+      "description": "User logout",
+      "ns": "loopback",
+      "name": "logout",
       "env": "server",
       "fn": "output = [input.user, 'logout', input.session_id]\n"
     },
     {
-      "name": "loopback",
-      "title": "Loopback",
-      "ns": "loopback",
-      "description": "Loopback",
-      "phrases": {
-        "active": "Creating Loopback"
-      },
-      "require": {
-        "loopback": "1.x.x"
-      },
       "ports": {
         "input": {},
         "output": {
@@ -358,16 +348,20 @@
           }
         }
       },
+      "require": {
+        "loopback": "1.x.x"
+      },
+      "phrases": {
+        "active": "Creating Loopback"
+      },
+      "description": "Loopback",
+      "ns": "loopback",
+      "title": "Loopback",
+      "name": "loopback",
       "env": "server",
-      "fn": "output = { loopback: loopback }\n"
+      "fn": "output = {\n  loopback: loopback\n}\n"
     },
     {
-      "name": "mail",
-      "ns": "loopback",
-      "description": "Mail connector",
-      "phrases": {
-        "active": "Creating Mail datasource"
-      },
       "ports": {
         "input": {
           "loopback": {
@@ -423,16 +417,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Creating Mail datasource"
+      },
+      "description": "Mail connector",
+      "ns": "loopback",
+      "name": "mail",
       "env": "server",
-      "fn": "output = { mail: input.loopback.createDataSource({\n  connector: input.loopback.Mail,\n  transports: input.transports\n}) }\n"
+      "fn": "output = {\n  mail: input.loopback.createDataSource({\n    connector: input.loopback.Mail,\n    transports: input.transports\n  })\n}\n"
     },
     {
-      "name": "memory",
-      "ns": "loopback",
-      "description": "Memory connector",
-      "phrases": {
-        "active": "Creating Memory datasource"
-      },
       "ports": {
         "input": {
           "loopback": {
@@ -449,16 +443,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Creating Memory datasource"
+      },
+      "description": "Memory connector",
+      "ns": "loopback",
+      "name": "memory",
       "env": "server",
-      "fn": "output = { memory: input.loopback.memory() }\n"
+      "fn": "output = {\n  memory: input.loopback.memory()\n}\n"
     },
     {
-      "name": "models",
-      "ns": "loopback",
-      "description": "Get exposed models",
-      "phrases": {
-        "active": "Getting exposed Models"
-      },
       "ports": {
         "input": {
           "loopback": {
@@ -476,20 +470,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Getting exposed Models"
+      },
+      "description": "Get exposed models",
+      "ns": "loopback",
+      "name": "models",
       "env": "server",
       "fn": "input.loopback.models()\n"
     },
     {
-      "name": "mongodb",
-      "ns": "loopback",
-      "description": "MongoDB connector",
-      "phrases": {
-        "active": "Creating MongoDB datasource"
-      },
-      "require": {
-        "loopback-datasource-juggler": "1.x.x",
-        "loopback-connector-mongodb": "1.x.x"
-      },
       "ports": {
         "input": {
           "loopback": {
@@ -542,19 +532,20 @@
           }
         }
       },
+      "require": {
+        "loopback-datasource-juggler": "1.x.x",
+        "loopback-connector-mongodb": "1.x.x"
+      },
+      "phrases": {
+        "active": "Creating MongoDB datasource"
+      },
+      "description": "MongoDB connector",
+      "ns": "loopback",
+      "name": "mongodb",
       "env": "server",
-      "fn": "var DataSource = loopback_datasource_juggler.DataSource;\noutput = { db: input.loopback.createDataSource({ connector: loopback_connector_mongodb }) }\n"
+      "fn": "var DataSource = loopback_datasource_juggler.DataSource;\noutput = {\n  db: input.loopback.createDataSource({\n    connector: loopback_connector_mongodb\n  })\n}\n"
     },
     {
-      "name": "rest",
-      "ns": "loopback",
-      "description": "REST connector",
-      "phrases": {
-        "active": "Creating REST datasource"
-      },
-      "require": {
-        "loopback-connector-rest": "1.x.x"
-      },
       "ports": {
         "input": {
           "loopback": {
@@ -570,16 +561,19 @@
           }
         }
       },
+      "require": {
+        "loopback-connector-rest": "1.x.x"
+      },
+      "phrases": {
+        "active": "Creating REST datasource"
+      },
+      "description": "REST connector",
+      "ns": "loopback",
+      "name": "rest",
       "env": "server",
-      "fn": "output = { db: input.loopback.createDataSource({ connector: loopback_connector_rest }) }\n"
+      "fn": "output = {\n  db: input.loopback.createDataSource({\n    connector: loopback_connector_rest\n  })\n}\n"
     },
     {
-      "name": "restRouter",
-      "ns": "loopback",
-      "description": "Rest Router",
-      "phrases": {
-        "active": "Using REST Router"
-      },
       "ports": {
         "input": {
           "app": {
@@ -597,16 +591,16 @@
         },
         "output": {}
       },
+      "phrases": {
+        "active": "Using REST Router"
+      },
+      "description": "Rest Router",
+      "ns": "loopback",
+      "name": "restRouter",
       "env": "server",
       "fn": "input.app.use(input.loopback.rest())\n"
     },
     {
-      "name": "user",
-      "ns": "loopback",
-      "description": "User Model",
-      "phrases": {
-        "active": "Creating User Model"
-      },
       "ports": {
         "input": {
           "loopback": {
@@ -633,16 +627,16 @@
           }
         }
       },
+      "phrases": {
+        "active": "Creating User Model"
+      },
+      "description": "User Model",
+      "ns": "loopback",
+      "name": "user",
       "env": "server",
-      "fn": "var User = input.loopback.User.extend('user');\nUser.attachTo(input.user_connector);\nUser.session.attachTo(input.session_connector);\noutput = { user: User }\n"
+      "fn": "var User = input.loopback.User.extend('user');\nUser.attachTo(input.user_connector);\nUser.session.attachTo(input.session_connector);\noutput = {\n  user: User\n}\n"
     },
     {
-      "name": "userEmail",
-      "ns": "loopback",
-      "description": "User Email",
-      "phrases": {
-        "active": "Attaching User Email Datasource"
-      },
       "ports": {
         "input": {
           "user": {
@@ -659,15 +653,22 @@
         },
         "output": {}
       },
+      "phrases": {
+        "active": "Attaching User Email Datasource"
+      },
+      "description": "User Email",
+      "ns": "loopback",
+      "name": "userEmail",
       "env": "server",
       "fn": "input.user.email.attachTo(input.mail)\ninput.user.requireEmailVerification = true;\n"
     },
     {
-      "name": "userEmailReset",
-      "ns": "loopback",
-      "description": "Reset User Email",
-      "phrases": {
-        "active": "Resetting user email for {{input.user.email}}"
+      "output": {
+        "error": {
+          "type": "object",
+          "title": "Error",
+          "description": "Error"
+        }
       },
       "ports": {
         "input": {
@@ -681,22 +682,27 @@
           }
         }
       },
+      "phrases": {
+        "active": "Resetting user email for {{input.user.email}}"
+      },
+      "description": "Reset User Email",
+      "ns": "loopback",
+      "name": "userEmailReset",
+      "env": "server",
+      "fn": "output = [input.user, 'reset', input.user_info.email]\n"
+    },
+    {
       "output": {
         "error": {
           "type": "object",
           "title": "Error",
           "description": "Error"
+        },
+        "user": {
+          "type": "object",
+          "title": "User",
+          "description": "User"
         }
-      },
-      "env": "server",
-      "fn": "output = [input.user, 'reset', input.user_info.email]\n"
-    },
-    {
-      "name": "userVerify",
-      "ns": "loopback",
-      "description": "Verfify User",
-      "phrases": {
-        "active": "Verifying user email for {{input.options.email}}"
       },
       "ports": {
         "input": {
@@ -734,20 +740,14 @@
           }
         }
       },
-      "output": {
-        "error": {
-          "type": "object",
-          "title": "Error",
-          "description": "Error"
-        },
-        "user": {
-          "type": "object",
-          "title": "User",
-          "description": "User"
-        }
+      "phrases": {
+        "active": "Verifying user email for {{input.options.email}}"
       },
+      "description": "Verfify User",
+      "ns": "loopback",
+      "name": "userVerify",
       "env": "server",
-      "fn": "input.options.type = 'email'\ninput.options.to   = input.user.email\ninput.user.verify(input.options, input.next)\n"
+      "fn": "input.options.type = 'email'\ninput.options.to = input.user.email\ninput.user.verify(input.options, input.next)\n"
     }
   ],
   "twigs": [],
