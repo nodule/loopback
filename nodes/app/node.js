@@ -1,1 +1,3 @@
-output = { app: input.loopback() }
+output = {
+  app: input.loopback()
+}
