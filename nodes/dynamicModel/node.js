@@ -1,1 +1,3 @@
-output = { model: input.loopback.Model.extend(input.name) }
+output = {
+  model: input.loopback.Model.extend(input.name)
+}
