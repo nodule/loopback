@@ -17,7 +17,9 @@
         "type": "Array",
         "items": {
           "type": {
-            "enum": ["smtp"],
+            "enum": [
+              "smtp"
+            ],
             "title": "Type",
             "default": "smtp"
           },
@@ -38,27 +40,24 @@
             "type": "object",
             "title": "Auth",
             "properties": {
-
               "user": {
                 "type": "string",
                 "title": "User"
               },
-
               "password": {
                 "type": "password",
                 "title": "Password"
               }
-
             }
           }
         }
       }
     },
     "output": {
-     "mail": {
+      "mail": {
         "type": "object",
         "title": "Mail"
-     }
+      }
     }
   }
 }

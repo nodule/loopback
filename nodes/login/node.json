@@ -20,16 +20,16 @@
       }
     },
     "output": {
-     "error": {
+      "error": {
         "type": "object",
         "title": "Error",
         "description": "Error"
-     },
-     "session": {
+      },
+      "session": {
         "type": "object",
         "title": "Session",
         "description": "User Session"
-     }
+      }
     }
   }
 }

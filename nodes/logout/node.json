@@ -20,11 +20,11 @@
       }
     },
     "output": {
-     "error": {
+      "error": {
         "type": "object",
         "title": "Error",
         "description": "Error"
-     }
+      }
     }
   }
 }

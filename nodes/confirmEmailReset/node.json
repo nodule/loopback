@@ -1,27 +1,27 @@
 {
   "name": "userEmailConfirmReset",
-    "ns": "loopback",
-    "description": "Confirm User Email Reset",
-    "phrases": {
-      "active": "Confirming user email reset"
-    },
-    "ports": {
-      "input": {
-        "user": {
-          "type": "function",
-          "title": "User Model"
-        },
-        "token": {
-          "type": "string",
-          "title": "Token"
-        }
-      }
-    },
-    "output": {
-      "error": {
-        "type": "object",
-        "title": "Error",
-        "description": "Error"
+  "ns": "loopback",
+  "description": "Confirm User Email Reset",
+  "phrases": {
+    "active": "Confirming user email reset"
+  },
+  "ports": {
+    "input": {
+      "user": {
+        "type": "function",
+        "title": "User Model"
+      },
+      "token": {
+        "type": "string",
+        "title": "Token"
       }
     }
+  },
+  "output": {
+    "error": {
+      "type": "object",
+      "title": "Error",
+      "description": "Error"
+    }
+  }
 }

@@ -24,11 +24,11 @@
       }
     },
     "output": {
-     "user": {
+      "user": {
         "type": "object",
         "title": "User",
         "description": "User"
-     }
+      }
     }
   }
 }

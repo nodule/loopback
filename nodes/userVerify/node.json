@@ -1,56 +1,56 @@
 {
   "name": "userVerify",
-    "ns": "loopback",
-    "description": "Verfify User",
-    "phrases": {
-      "active": "Verifying user email for {{input.options.email}}"
-    },
-    "ports": {
-      "input": {
-        "user": {
-          "type": "object",
-          "title": "User"
-        },
-        "options": {
-          "type": "object",
-          "properties": {
-            "from": {
-              "type": "email",
-              "title": "Email"
-            },
-            "subject": {
-              "type": "string",
-              "title": "Subject",
-              "default": "Thanks for Registering at FooBar"
-            },
-            "text": {
-              "type": "string",
-              "title": "Text",
-              "default": "Please verify your email address!"
-            },
-            "template": {
-              "type": "string",
-              "title": "Template: [Problem needs a file]"
-            },
-            "redirect": {
-              "type": "string",
-              "title": "Redirect",
-              "default": "/"
-            }
+  "ns": "loopback",
+  "description": "Verfify User",
+  "phrases": {
+    "active": "Verifying user email for {{input.options.email}}"
+  },
+  "ports": {
+    "input": {
+      "user": {
+        "type": "object",
+        "title": "User"
+      },
+      "options": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "email",
+            "title": "Email"
+          },
+          "subject": {
+            "type": "string",
+            "title": "Subject",
+            "default": "Thanks for Registering at FooBar"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+            "default": "Please verify your email address!"
+          },
+          "template": {
+            "type": "string",
+            "title": "Template: [Problem needs a file]"
+          },
+          "redirect": {
+            "type": "string",
+            "title": "Redirect",
+            "default": "/"
           }
         }
       }
-    },
-    "output": {
-      "error": {
-        "type": "object",
-        "title": "Error",
-        "description": "Error"
-      },
-      "user": {
-        "type": "object",
-        "title": "User",
-        "description": "User"
-      }
     }
+  },
+  "output": {
+    "error": {
+      "type": "object",
+      "title": "Error",
+      "description": "Error"
+    },
+    "user": {
+      "type": "object",
+      "title": "User",
+      "description": "User"
+    }
+  }
 }

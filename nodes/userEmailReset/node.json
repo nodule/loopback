@@ -1,27 +1,27 @@
 {
   "name": "userEmailReset",
-    "ns": "loopback",
-    "description": "Reset User Email",
-    "phrases": {
-      "active": "Resetting user email for {{input.user.email}}"
-    },
-    "ports": {
-      "input": {
-        "user": {
-          "type": "function",
-          "title": "User Model"
-        },
-        "user_info": {
-          "type": "object",
-          "title": "User"
-        }
-      }
-    },
-    "output": {
-      "error": {
+  "ns": "loopback",
+  "description": "Reset User Email",
+  "phrases": {
+    "active": "Resetting user email for {{input.user.email}}"
+  },
+  "ports": {
+    "input": {
+      "user": {
+        "type": "function",
+        "title": "User Model"
+      },
+      "user_info": {
         "type": "object",
-        "title": "Error",
-        "description": "Error"
+        "title": "User"
       }
     }
+  },
+  "output": {
+    "error": {
+      "type": "object",
+      "title": "Error",
+      "description": "Error"
+    }
+  }
 }

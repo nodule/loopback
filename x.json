@@ -339,6 +339,11 @@
       "fn": "output = [input.user, 'logout', input.session_id]\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "loopback": "1.x.x"
+        }
+      },
       "ports": {
         "input": {},
         "output": {
@@ -347,9 +352,6 @@
             "type": "function"
           }
         }
-      },
-      "require": {
-        "loopback": "1.x.x"
       },
       "phrases": {
         "active": "Creating Loopback"
@@ -480,6 +482,12 @@
       "fn": "input.loopback.models()\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "loopback-datasource-juggler": "1.x.x",
+          "loopback-connector-mongodb": "1.x.x"
+        }
+      },
       "ports": {
         "input": {
           "loopback": {
@@ -532,10 +540,6 @@
           }
         }
       },
-      "require": {
-        "loopback-datasource-juggler": "1.x.x",
-        "loopback-connector-mongodb": "1.x.x"
-      },
       "phrases": {
         "active": "Creating MongoDB datasource"
       },
@@ -546,6 +550,11 @@
       "fn": "var DataSource = loopback_datasource_juggler.DataSource;\noutput = {\n  db: input.loopback.createDataSource({\n    connector: loopback_connector_mongodb\n  })\n}\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "loopback-connector-rest": "1.x.x"
+        }
+      },
       "ports": {
         "input": {
           "loopback": {
@@ -560,9 +569,6 @@
             "title": "DB"
           }
         }
-      },
-      "require": {
-        "loopback-connector-rest": "1.x.x"
       },
       "phrases": {
         "active": "Creating REST datasource"

@@ -6,16 +6,18 @@
   "phrases": {
     "active": "Creating Loopback"
   },
-  "require": {
-    "loopback": "1.x.x"
-  },
   "ports": {
-    "input": { },
+    "input": {},
     "output": {
       "loopback": {
         "title": "Loopback",
         "type": "function"
       }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "loopback": "1.x.x"
     }
   }
 }

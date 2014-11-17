@@ -20,16 +20,16 @@
       }
     },
     "output": {
-     "error": {
+      "error": {
         "type": "object",
         "title": "Error",
         "description": "Error"
-     },
-     "model": {
+      },
+      "model": {
         "type": "object",
         "title": "Model",
         "description": "The model"
-     }
+      }
     }
   }
 }

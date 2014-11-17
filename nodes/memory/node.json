@@ -14,11 +14,11 @@
       }
     },
     "output": {
-     "memory": {
+      "memory": {
         "type": "object",
         "title": "Memory",
         "description": "Memory Connector"
-     }
+      }
     }
   }
 }

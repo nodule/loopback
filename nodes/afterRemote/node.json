@@ -13,7 +13,9 @@
         "readonly": "true"
       },
       "type": {
-        "enum": ["create"],
+        "enum": [
+          "create"
+        ],
         "title": "Type",
         "description": "AfterRemote action type"
       }

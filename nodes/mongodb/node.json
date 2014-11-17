@@ -5,10 +5,6 @@
   "phrases": {
     "active": "Creating MongoDB datasource"
   },
-  "require": {
-    "loopback-datasource-juggler": "1.x.x",
-    "loopback-connector-mongodb": "1.x.x"
-  },
   "ports": {
     "input": {
       "loopback": {
@@ -55,10 +51,16 @@
       }
     },
     "output": {
-     "db": {
+      "db": {
         "type": "object",
         "title": "DB"
-     }
+      }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "loopback-datasource-juggler": "1.x.x",
+      "loopback-connector-mongodb": "1.x.x"
     }
   }
 }
