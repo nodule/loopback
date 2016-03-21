@@ -1,3 +1,3 @@
 output = {
-  model: $.loopback.Model.extend($.name)
+  model: $.create($.loopback.Model.extend($.name))
 }

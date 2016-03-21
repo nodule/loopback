@@ -1,3 +1,3 @@
 output = {
-  memory: $.loopback.memory()
+  memory: $.create($.loopback.memory())
 }

@@ -1,3 +1,1 @@
-output = {
-  app: $.loopback()
-}
+output = { app: $.create($.loopback()) }
