@@ -1,3 +1,3 @@
 output = {
-  model: input.loopback.Model.extend(input.name)
+  model: $.loopback.Model.extend($.name)
 }

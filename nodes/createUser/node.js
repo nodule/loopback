@@ -1,1 +1,1 @@
-output = [input.user, 'create', input.user_info]
+output = [$.user, 'create', $.user_info]

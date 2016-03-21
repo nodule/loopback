@@ -1,1 +1,1 @@
-output = [input.user, 'login', input.login]
+output = [$.user, 'login', $.login]

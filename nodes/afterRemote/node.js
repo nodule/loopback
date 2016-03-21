@@ -1,1 +1,1 @@
-output = [input.model, input.type]
+output = [$.model, $.type]

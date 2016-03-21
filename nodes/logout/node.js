@@ -1,1 +1,1 @@
-output = [input.user, 'logout', input.session_id]
+output = [$.user, 'logout', $.session_id]

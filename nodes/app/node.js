@@ -1,3 +1,3 @@
 output = {
-  app: input.loopback()
+  app: $.loopback()
 }

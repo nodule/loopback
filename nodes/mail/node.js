@@ -1,6 +1,6 @@
 output = {
-  mail: input.loopback.createDataSource({
-    connector: input.loopback.Mail,
-    transports: input.transports
+  mail: $.loopback.createDataSource({
+    connector: $.loopback.Mail,
+    transports: $.transports
   })
 }

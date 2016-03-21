@@ -1,5 +1,5 @@
 output = {
-  db: input.loopback.createDataSource({
+  db: $.loopback.createDataSource({
     connector: loopback_connector_rest
   })
 }

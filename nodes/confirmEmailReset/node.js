@@ -1,1 +1,1 @@
-output = [input.user, 'confirmReset', input.token]
+output = [$.user, 'confirmReset', $.token]

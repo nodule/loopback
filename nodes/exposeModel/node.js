@@ -1,1 +1,1 @@
-input.loopback.model(input.model)
+$.loopback.model($.model)

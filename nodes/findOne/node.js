@@ -1,1 +1,1 @@
-output = [input.model, 'findOne', input.criteria]
+output = [$.model, 'findOne', $.criteria]

@@ -1,1 +1,1 @@
-input.app.use(input.loopback.rest())
+$.app.use($.loopback.rest())

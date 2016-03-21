@@ -1,2 +1,2 @@
-input.user.email.attachTo(input.mail)
-input.user.requireEmailVerification = true;
+$.user.email.attachTo($.mail)
+$.user.requireEmailVerification = true;

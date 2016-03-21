@@ -1,1 +1,1 @@
-output = [input.user, 'reset', input.user_info.email]
+output = [$.user, 'reset', $.user_info.email]
